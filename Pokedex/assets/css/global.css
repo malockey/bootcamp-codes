@@ -1,0 +1,32 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    background-color: #555555;
+}
+
+.content {
+    width: 100vw;
+    height: 100vh;
+    background-color: #555555;
+    border-radius: 1rem;
+}
+
+@media screen and (min-width: 992px) {
+    .content {
+        max-width: 992px;
+        height: auto;
+        border-radius: 1rem;
+    }
+}
