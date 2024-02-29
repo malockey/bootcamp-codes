@@ -1,0 +1,102 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#Card {
+    background: linear-gradient(to bottom, #1a1a1a, #444);
+    padding: 20px 30px 20px 30px;
+    border: 1px solid #000;
+}
+  
+#photoInfo {
+    display: flex;
+    align-items: center;
+}
+#photo {
+    border: 1px solid;
+    border-radius: 5rem;
+    overflow: hidden;
+    margin: 10px;
+}
+#info {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#info li {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    line-height: 0;
+    border-radius: 1rem;
+    height: 2em;
+    margin-bottom: 0.75rem;
+    cursor: pointer; 
+}
+#info li img {
+    margin-right: 10px;
+}
+#info li p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+    font-size: small;
+}
+
+ul {
+    padding: 0;
+}
+
+#sectionList div {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #555;
+    border-radius: 1rem;
+    margin: 10px;
+    filter: grayscale(100%);
+    align-items: baseline;
+}
+#sectionList div button {
+    align-items: baseline;
+    background: transparent;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    color: #fff;
+}
+#sectionList div:hover {
+    filter: grayscale(0%);
+    background: linear-gradient(to right, #000846, #3b55ea);
+    transition: filter 0.3s linear;
+    cursor: pointer;    
+} 
+#sectionList div.expanded {
+    filter: grayscale(0%);
+    background: linear-gradient(to right, #000846, #3b55ea);
+}
+#sectionList div.expanded:hover {
+    filter: grayscale(100%);
+}
+#sectionList img {
+    max-height: 10px;
+    margin-right: 10px;
+}
+#sectionList div.expanded img {
+    transform: rotate(180deg);
+}
+#sectionList div.expanded button {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+#sectionList h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+    font-size: medium;
+}
