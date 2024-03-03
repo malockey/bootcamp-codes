@@ -8,6 +8,7 @@ import devIco from '../public/assets/devIco.png'
 import locIco from '../public/assets/locIco.png'
 import numIco from '../public/assets/numIco.png'
 import mailIco from '../public/assets/mailIco.png'
+import dioIco from '../public/assets/dioIco.png'
 
 export function Portfolio () {
   return (
@@ -27,16 +28,21 @@ export function Portfolio () {
       </div>
       <div id='sectionList'>
         <Presentation
-          ref='skillsRef'
           id='skills'
           title='Skills'
         />
         <Presentation
-          ref=''
           id='languages'
           title='Languages' />
-        <Presentation id='education' title='Education' />
-        <Presentation id='portfolio' title='Portfolio' />
+        <Presentation
+          id='education'
+          title='Education' />
+        <Presentation
+          id='portfolio'
+          title='Portfolio' />
+      </div>
+      <div id='footer'>
+        <img src={dioIco} alt="dioIco" width={30}/>
       </div>
     </div>
   )

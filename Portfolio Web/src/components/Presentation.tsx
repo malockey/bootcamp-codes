@@ -1,23 +1,19 @@
 import arrowIco from '../public/assets/arrowIco.png'
 import { SubPresentationDesc, SubPresentationImg } from './SubPresentation'
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 
 import reactIco from '../public/assets/reactIco.png'
 import typeIco from '../public/assets/typeIco.png'
 import viteIco from '../public/assets/viteIco.png'
+import linkIco from '../public/assets/linkIco.png'
+import gitIco from '../public/assets/gitIco.png'
 
 interface PresentationProps {
   id:string
   title:string
-  ref:string
 }
 
-export function Presentation ({ id, title, ref }: PresentationProps) {
-  const skillsRef = useRef<HTMLDivElement>(null)
-  const languagesRef = useRef<HTMLDivElement>(null)
-  const educationRef = useRef<HTMLDivElement>(null)
-  const portfolioRef = useRef<HTMLDivElement>(null)
-
+export function Presentation ({ id, title }: PresentationProps) {
   const [isExpanded, setIsExpanded] = useState(false)
   const toggleExpansion = () => {
     setIsExpanded(!isExpanded)
@@ -27,57 +23,49 @@ export function Presentation ({ id, title, ref }: PresentationProps) {
     <div id={id} className={isExpanded ? 'expanded' : ''}>
       <button type='button' onClick={toggleExpansion}>
         <h2>{title}</h2>
-        <img className='arrow_bottom' src={arrowIco} alt='arrowIco'/>
+        <img className='arrow' src={arrowIco} alt='arrowIco'/>
       </button>
 
-      {skillsRef?.classList.contains('expanded') && (
-        <div>
+      {isExpanded && id === 'skills' && (
+        <div id='subSkills'>
           <SubPresentationImg
+            className='icos'
             images={[
-              { id: 1, src: reactIco, alt: 'reactIco', size: 10 },
-              { id: 2, src: typeIco, alt: 'typeIco', size: 10 },
-              { id: 3, src: viteIco, alt: 'viteIco', size: 10 }
+              { src: reactIco, alt: 'reactIco', size: 10 },
+              { src: typeIco, alt: 'typeIco', size: 10 },
+              { src: viteIco, alt: 'viteIco', size: 10 }
             ]}
-            />
+          />
+        </div>
+      )}
+      {isExpanded && id === 'languages' && (
+        <div id='subLang'>
           <SubPresentationDesc
+            className='desc'
             descriptions={[
-              { id: 1, desc: '', subDesc: '' },
-              { id: 2, desc: '', subDesc: '' }
+              { desc: 'Portuguese:', subDesc: 'Native/Fluent' },
+              { desc: 'English:', subDesc: 'Intermediary' }
             ]}
           />
         </div>
       )}
-      {languagesRef?.classList.contains('expanded') && (
+      {isExpanded && id === 'education' && (
         <div>
           <SubPresentationDesc
-          descriptions={[
-            { id: 1, desc: 'Português - BR', subDesc: 'Nativo/Fluente' },
-            { id: 2, desc: 'Inglês', subDesc: 'Intermediário' }
-          ]}
-          />
-        </div>
-      )}
-      {educationRef?.classList.contains('expanded') && (
-        <div>
-          <SubPresentationDesc
+            className='desc'
             descriptions={[
-              { id: 1, desc: 'Ciência da Computação', subDesc: '5/10' }
+              { desc: 'Computer Science:', subDesc: '5/10' }
             ]}
           />
         </div>
       )}
-      {portfolioRef?.classList.contains('expanded') && (
-        <div>
+      {isExpanded && id === 'portfolio' && (
+        <div id='subPort'>
           <SubPresentationImg
+            className='icos'
             images={[
-              { id: 1, src: '', alt: 'githubIco', size: 10 },
-              { id: 2, src: '', alt: 'linkedinIco', size: 10 }
-            ]}
-          />
-          <SubPresentationDesc
-            descriptions={[
-              { id: 1, desc: 'Github', subDesc: 'link' },
-              { id: 2, desc: 'Linkedin', subDesc: 'link' }
+              { src: gitIco, alt: 'githubIco', size: 10, href: 'https://github.com/malockey', title: 'Github' },
+              { src: linkIco, alt: 'linkedinIco', size: 10, href: 'https://linkedin.com/in/malockey', title: 'Linkedin' }
             ]}
           />
         </div>

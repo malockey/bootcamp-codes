@@ -10,6 +10,7 @@ body {
     background: linear-gradient(to bottom, #1a1a1a, #444);
     padding: 20px 30px 20px 30px;
     border: 1px solid #000;
+    width: 300px;
 }
   
 #photoInfo {
@@ -76,27 +77,83 @@ ul {
     cursor: pointer;    
 } 
 #sectionList div.expanded {
+    align-items: center;
+    flex-direction: column;
+    cursor: default;
     filter: grayscale(0%);
-    background: linear-gradient(to right, #000846, #3b55ea);
+    background: #444;
 }
-#sectionList div.expanded:hover {
-    filter: grayscale(100%);
+#sectionList div.expanded div {
+    filter: grayscale(0%);
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+    border: 0;
 }
-#sectionList img {
-    max-height: 10px;
+#sectionList div.expanded div:hover {
+    cursor: default;
+    background: none;
+}
+#sectionList div.expanded #subLang {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: center;
+    justify-content: space-between;
+    margin: 0;
+}
+#sectionList div.expanded div .desc {
+    display: flex;
+    align-items: baseline;
+    margin: 0;
+}
+#sectionList div.expanded div .desc p {
+    margin: 0px 0px 0px 10px;
+    font-size: 13px;
+}
+#sectionList div.expanded div .desc h4 {
+    margin: 0px 0px 15px 0px;
+    font-size: 15px;
+}
+#sectionList div.expanded div .icos {
+    height: 30px;
+    width: 30px;
+    margin: 0px 10px 15px;
+}
+#sectionList div.expanded #subPort {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+    text-align: center;
+}
+#sectionList div.expanded #subPort a {
+    display: flex;
+    font-size: 14px;
+    padding-top: 6px;
+    margin-left: 10px;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Courier, monospace;
+    font-weight: 100;
+    color: blue;
+}
+#sectionList .arrow {
+    max-height: 8px;
     margin-right: 10px;
 }
-#sectionList div.expanded img {
+#sectionList div.expanded .arrow {
     transform: rotate(180deg);
-}
-#sectionList div.expanded button {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
 }
 #sectionList h2 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 100;
     font-size: medium;
+    margin: 10px;
+}
+#footer {
+    display: flex;
+    padding-top: 10px;
+    margin: 10px;
+    justify-content: flex-end;
 }
